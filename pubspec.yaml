@@ -12,8 +12,6 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  shared_preferences: ^2.1.2
-  flutter_svg: ^2.0.7
   flutter_screenutil: ^5.8.4
 
 dev_dependencies:
@@ -27,7 +25,6 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/icons/
     - assets/images/
 
   # fonts:
