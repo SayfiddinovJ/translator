@@ -3,32 +3,36 @@ part of 'translation_bloc.dart';
 @immutable
 class TranslationState extends Equatable {
   final String statusText;
-  final TranslationModel userModel;
+  final TranslationModel translationModel;
   final FormStatus status;
+  final String text;
 
   const TranslationState({
     required this.statusText,
-    required this.userModel,
+    required this.translationModel,
     required this.status,
+    required this.text,
   });
 
   TranslationState copyWith({
     String? statusText,
-    TranslationModel? userModel,
+    TranslationModel? translationModel,
     FormStatus? status,
+    String? text,
   }) {
     return TranslationState(
       statusText: statusText ?? this.statusText,
-      userModel: userModel ?? this.userModel,
+      translationModel: translationModel ?? this.translationModel,
       status: status ?? this.status,
+      text: text ?? this.text,
     );
   }
 
   String canRequest() {
-    if (userModel.sourceText.isEmpty) return 'Enter some text';
+    if (text.isEmpty) return 'Enter some text';
     return '';
   }
 
   @override
-  List<Object?> get props => [statusText, status, userModel];
+  List<Object?> get props => [statusText, status, translationModel, text];
 }

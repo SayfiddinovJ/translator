@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
       splitScreenMode: true,
       minTextAdapt: true,
       designSize: const Size(375, 812),
-      builder: (context, child) => const MaterialApp(
+      builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         home: HomeScreen(),
       ),

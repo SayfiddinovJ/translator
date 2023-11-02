@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:translater/data/models/universal_data.dart';
+import 'package:translater/data/models/word_model.dart';
 import 'package:translater/utils/constants.dart';
 
 class ApiService {
@@ -49,7 +50,7 @@ class ApiService {
       response = await dio.get('/translate?sl=$sl&dl=$dl&text=$text/');
 
       if (response.statusCode == 200) {
-        return UniversalData(data: response.data);
+        return UniversalData(data: TranslationModel.fromJson(response.data));
       }
       return UniversalData(error: "Other Error");
     } on DioException catch (e) {
